@@ -136,18 +136,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div
-        className={cn(
-          'absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0',
-          isLoaded && 'animate-fade-in'
-        )}
-        style={{ animationDelay: '1.5s' }}
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full animate-bounce" />
-        </div>
-      </div>
+ 
     </section>
   );
 }

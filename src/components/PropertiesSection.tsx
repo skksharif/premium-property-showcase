@@ -139,13 +139,7 @@ export function PropertiesSection() {
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group">
-            View All Properties
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+      
       </div>
     </section>
   );

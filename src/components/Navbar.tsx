@@ -7,7 +7,7 @@ const navLinks = [
   { href: '#home', label: 'Home', icon: Home },
   { href: '#properties', label: 'Properties', icon: Building2 },
   { href: '#about', label: 'About', icon: Users },
-  { href: '#testimonials', label: 'Testimonials', icon: Star },
+  //{ href: '#testimonials', label: 'Testimonials', icon: Star },
   { href: '#contact', label: 'Contact', icon: Phone },
 ];
 
@@ -51,16 +51,13 @@ export function Navbar() {
           }}
           className="flex items-center gap-2 group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold to-gold-light flex items-center justify-center">
-            <Building2 className="w-6 h-6 text-charcoal" />
-          </div>
           <span
             className={cn(
               'text-xl font-bold transition-colors duration-300',
               isScrolled ? 'text-foreground' : 'text-primary-foreground'
             )}
           >
-            Premium<span className="text-primary">Estate</span>
+            Vegi<span className="text-primary"> Info</span>
           </span>
         </a>
 
@@ -123,7 +120,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden',
+          'lg:hidden absolute top-full left-0 right-0 bg-white md:bg-background/98 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden',
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         )}
       >
