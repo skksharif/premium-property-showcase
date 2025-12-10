@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Quicksand", "sans-serif"],
-        display: ["Playfair Display", "serif"],
+        sans: ["DM Sans", "sans-serif"],
+        display: ["Libre Baskerville", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,10 +51,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        earth: {
+          DEFAULT: "hsl(var(--earth-brown))",
+          light: "hsl(var(--earth-brown-light))",
+          dark: "hsl(var(--earth-brown-dark))",
+        },
+        olive: {
+          DEFAULT: "hsl(var(--olive))",
+          light: "hsl(var(--olive-light))",
+          dark: "hsl(var(--olive-dark))",
+        },
         gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
+          DEFAULT: "hsl(var(--muted-gold))",
+          light: "hsl(var(--muted-gold-light))",
+          dark: "hsl(var(--muted-gold-dark))",
         },
         charcoal: {
           DEFAULT: "hsl(var(--charcoal))",
@@ -64,6 +74,8 @@ export default {
           DEFAULT: "hsl(var(--cream))",
           dark: "hsl(var(--cream-dark))",
         },
+        terracotta: "hsl(var(--terracotta))",
+        forest: "hsl(var(--forest))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -86,7 +98,7 @@ export default {
         sm: "var(--shadow-sm)",
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
-        gold: "var(--shadow-gold)",
+        earth: "var(--shadow-earth)",
         glow: "var(--shadow-glow)",
       },
       keyframes: {
@@ -123,8 +135,12 @@ export default {
           "50%": { transform: "translateY(-20px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsla(43, 45%, 60%, 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsla(43, 45%, 60%, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsla(35, 35%, 45%, 0.2)" },
+          "50%": { boxShadow: "0 0 40px hsla(35, 35%, 45%, 0.4)" },
+        },
+        "bounce-subtle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
@@ -137,6 +153,7 @@ export default {
         "slide-right": "slide-right 0.8s ease-out forwards",
         float: "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
       },
     },
   },

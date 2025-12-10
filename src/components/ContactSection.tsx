@@ -3,66 +3,25 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { toast } from '@/hooks/use-toast';
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  Send,
-  Building2,
-  User,
-  AtSign,
-  MessageSquare,
-} from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, User, MessageSquare } from 'lucide-react';
 
-const propertyTypes = [
-  'Luxury Villa',
-  'Penthouse',
-  'Apartment',
-  'Commercial Space',
-  'Land/Plot',
-  'Other',
-];
-
-const budgetRanges = [
-  'Under $500K',
-  '$500K - $1M',
-  '$1M - $2M',
-  '$2M - $5M',
-  '$5M+',
-];
+const interestTypes = ['Buying Land', 'Selling Land', 'Investment Consultation', 'Legal Assistance', 'Other'];
+const plotTypes = ['Open Plots', 'Agricultural Land', 'DTCP/RERA Approved', 'Farm Land', 'Commercial Land', 'Any'];
 
 const contactInfo = [
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+1 (800) 555-0199',
-    href: 'tel:+18005550199',
-  },
-  {
-    icon: Mail,
-    label: 'Email',
-    value: 'contact@premiumestate.com',
-    href: 'mailto:contact@premiumestate.com',
-  },
-  {
-    icon: MapPin,
-    label: 'Address',
-    value: '123 Luxury Avenue, New York, NY 10001',
-    href: '#',
-  },
-  {
-    icon: Clock,
-    label: 'Hours',
-    value: 'Mon - Sat: 9:00 AM - 6:00 PM',
-    href: '#',
-  },
+  { icon: Phone, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
+  { icon: Mail, label: 'Email', value: 'contact@vegiinfo.com', href: 'mailto:contact@vegiinfo.com' },
+  { icon: MapPin, label: 'Office', value: 'Warangal, Telangana, India', href: '#' },
+  { icon: Clock, label: 'Hours', value: 'Mon - Sat: 9:00 AM - 6:00 PM', href: '#' },
 ];
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 bg-cream">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 bg-cream relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border-2 border-gold/20 marker-pulse" />
+      </div>
+      <div className="container relative z-10 mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16">
           <ContactInfo />
           <ContactForm />
@@ -76,56 +35,43 @@ function ContactInfo() {
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
-    <div
-      ref={ref}
-      className={cn('opacity-0', isVisible && 'animate-slide-right')}
-    >
-      <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-        Get In Touch
-      </span>
+    <div ref={ref} className={cn('opacity-0', isVisible && 'animate-slide-right')}>
+      <span className="text-olive font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-        Let's Find Your{' '}
-        <span className="font-display italic text-primary">Dream Property</span>
+        Start Your{' '}
+        <span className="font-display italic text-primary">Land Journey</span>
       </h2>
       <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-        Ready to start your property journey? Our expert consultants are here to
-        guide you every step of the way. Fill out the form or reach us directly.
+        Whether you want to buy verified land or sell your property at the best price, 
+        our team is here to assist. Book a free consultation today.
       </p>
 
-      {/* Contact Details */}
       <div className="space-y-6">
         {contactInfo.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="flex items-start gap-4 group"
-          >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-              <item.icon className="w-5 h-5 text-primary" />
+          <a key={item.label} href={item.href} className="flex items-start gap-4 group">
+            <div className="w-12 h-12 rounded-xl bg-olive/10 flex items-center justify-center group-hover:bg-olive/20 transition-colors">
+              <item.icon className="w-5 h-5 text-olive" />
             </div>
             <div>
               <span className="text-sm text-muted-foreground">{item.label}</span>
-              <p className="font-medium text-foreground group-hover:text-primary transition-colors">
-                {item.value}
-              </p>
+              <p className="font-medium text-foreground group-hover:text-primary transition-colors">{item.value}</p>
             </div>
           </a>
         ))}
       </div>
 
-      {/* Map Placeholder */}
-      <div className="mt-10 rounded-2xl overflow-hidden h-64 bg-secondary">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.305935303!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1635959481000!5m2!1sen!2s"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Office Location"
-        />
-      </div>
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/919876543210"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-forest text-primary-foreground rounded-xl hover:bg-forest/90 transition-colors"
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Chat on WhatsApp
+      </a>
     </div>
   );
 }
@@ -138,270 +84,97 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    toast({
-      title: 'Message Sent Successfully!',
-      description:
-        "We'll get back to you within 24 hours. Thank you for your interest!",
-    });
-
+    toast({ title: 'Message Sent!', description: "We'll contact you within 24 hours." });
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset();
   };
 
   return (
-    <div
-      ref={ref}
-      className={cn('opacity-0', isVisible && 'animate-slide-left')}
-    >
-      <div className="bg-background rounded-3xl p-8 md:p-10 shadow-lg">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-            <Building2 className="w-6 h-6 text-primary" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-foreground">
-              Schedule a Consultation
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Free property consultation with our experts
-            </p>
-          </div>
-        </div>
+    <div ref={ref} className={cn('opacity-0', isVisible && 'animate-slide-left')}>
+      <div className="bg-card rounded-3xl p-8 md:p-10 shadow-lg border border-border">
+        <h3 className="text-xl font-bold text-foreground mb-2">Schedule a Site Visit</h3>
+        <p className="text-sm text-muted-foreground mb-8">Free consultation with our land experts</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name */}
-          <div className="relative">
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-foreground mb-2"
-            >
-              Full Name *
-            </label>
-            <div className="relative">
-              <User
-                className={cn(
-                  'absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 transition-colors',
-                  focusedField === 'name' ? 'text-primary' : 'text-muted-foreground'
-                )}
-              />
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className={cn(
-                  'w-full pl-12 pr-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300',
-                  focusedField === 'name'
-                    ? 'border-primary shadow-gold/20 shadow-lg'
-                    : 'border-border hover:border-primary/50'
-                )}
-                placeholder="John Doe"
-                onFocus={() => setFocusedField('name')}
-                onBlur={() => setFocusedField(null)}
-              />
-            </div>
-          </div>
-
-          {/* Phone & Email Row */}
+          <InputField id="name" label="Full Name *" icon={User} focusedField={focusedField} setFocusedField={setFocusedField} placeholder="Your Name" required />
+          
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Phone */}
-            <div className="relative">
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-foreground mb-2"
-              >
-                Phone Number *
-              </label>
-              <div className="relative">
-                <Phone
-                  className={cn(
-                    'absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 transition-colors',
-                    focusedField === 'phone' ? 'text-primary' : 'text-muted-foreground'
-                  )}
-                />
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  className={cn(
-                    'w-full pl-12 pr-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300',
-                    focusedField === 'phone'
-                      ? 'border-primary shadow-gold/20 shadow-lg'
-                      : 'border-border hover:border-primary/50'
-                  )}
-                  placeholder="+1 (555) 000-0000"
-                  onFocus={() => setFocusedField('phone')}
-                  onBlur={() => setFocusedField(null)}
-                />
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="relative">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-foreground mb-2"
-              >
-                Email Address *
-              </label>
-              <div className="relative">
-                <AtSign
-                  className={cn(
-                    'absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 transition-colors',
-                    focusedField === 'email' ? 'text-primary' : 'text-muted-foreground'
-                  )}
-                />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className={cn(
-                    'w-full pl-12 pr-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300',
-                    focusedField === 'email'
-                      ? 'border-primary shadow-gold/20 shadow-lg'
-                      : 'border-border hover:border-primary/50'
-                  )}
-                  placeholder="john@example.com"
-                  onFocus={() => setFocusedField('email')}
-                  onBlur={() => setFocusedField(null)}
-                />
-              </div>
-            </div>
+            <InputField id="phone" label="Phone Number *" icon={Phone} focusedField={focusedField} setFocusedField={setFocusedField} placeholder="+91 98765 43210" type="tel" required />
+            <InputField id="email" label="Email" icon={Mail} focusedField={focusedField} setFocusedField={setFocusedField} placeholder="email@example.com" type="email" />
           </div>
 
-          {/* Property Type & Budget Row */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Property Type */}
-            <div>
-              <label
-                htmlFor="propertyType"
-                className="block text-sm font-medium text-foreground mb-2"
-              >
-                Property Interest *
-              </label>
-              <select
-                id="propertyType"
-                name="propertyType"
-                required
-                className={cn(
-                  'w-full px-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300 appearance-none cursor-pointer',
-                  focusedField === 'propertyType'
-                    ? 'border-primary shadow-gold/20 shadow-lg'
-                    : 'border-border hover:border-primary/50'
-                )}
-                onFocus={() => setFocusedField('propertyType')}
-                onBlur={() => setFocusedField(null)}
-              >
-                <option value="">Select property type</option>
-                {propertyTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Budget */}
-            <div>
-              <label
-                htmlFor="budget"
-                className="block text-sm font-medium text-foreground mb-2"
-              >
-                Budget Range *
-              </label>
-              <select
-                id="budget"
-                name="budget"
-                required
-                className={cn(
-                  'w-full px-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300 appearance-none cursor-pointer',
-                  focusedField === 'budget'
-                    ? 'border-primary shadow-gold/20 shadow-lg'
-                    : 'border-border hover:border-primary/50'
-                )}
-                onFocus={() => setFocusedField('budget')}
-                onBlur={() => setFocusedField(null)}
-              >
-                <option value="">Select budget range</option>
-                {budgetRanges.map((range) => (
-                  <option key={range} value={range}>
-                    {range}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <SelectField id="interest" label="I am interested in *" options={interestTypes} focusedField={focusedField} setFocusedField={setFocusedField} required />
+            <SelectField id="plotType" label="Plot Type" options={plotTypes} focusedField={focusedField} setFocusedField={setFocusedField} />
           </div>
 
-          {/* Message */}
-          <div className="relative">
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-foreground mb-2"
-            >
-              Additional Message
-            </label>
-            <div className="relative">
-              <MessageSquare
-                className={cn(
-                  'absolute left-4 top-4 w-5 h-5 transition-colors',
-                  focusedField === 'message' ? 'text-primary' : 'text-muted-foreground'
-                )}
-              />
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className={cn(
-                  'w-full pl-12 pr-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300 resize-none',
-                  focusedField === 'message'
-                    ? 'border-primary shadow-gold/20 shadow-lg'
-                    : 'border-border hover:border-primary/50'
-                )}
-                placeholder="Tell us about your requirements..."
-                onFocus={() => setFocusedField('message')}
-                onBlur={() => setFocusedField(null)}
-              />
-            </div>
-          </div>
+          <InputField id="location" label="Preferred Location" icon={MapPin} focusedField={focusedField} setFocusedField={setFocusedField} placeholder="e.g., Warangal, Hyderabad" />
 
-          {/* Submit Button */}
-          <Button
-            type="submit"
-            variant="gold"
-            size="xl"
-            className="w-full group"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <span className="flex items-center gap-2">
-                <span className="w-5 h-5 border-2 border-charcoal/30 border-t-charcoal rounded-full animate-spin" />
-                Sending...
-              </span>
-            ) : (
-              <>
-                Send Message
-                <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </>
-            )}
+          <TextareaField id="message" label="Message" icon={MessageSquare} focusedField={focusedField} setFocusedField={setFocusedField} placeholder="Tell us about your requirements..." />
+
+          <Button type="submit" variant="default" size="xl" className="w-full group" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : <>Send Message <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></>}
           </Button>
-
-          <p className="text-center text-sm text-muted-foreground">
-            By submitting, you agree to our{' '}
-            <a href="#" className="text-primary hover:underline">
-              Privacy Policy
-            </a>{' '}
-            and{' '}
-            <a href="#" className="text-primary hover:underline">
-              Terms of Service
-            </a>
-          </p>
         </form>
+      </div>
+    </div>
+  );
+}
+
+function InputField({ id, label, icon: Icon, focusedField, setFocusedField, ...props }: any) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-sm font-medium text-foreground mb-2">{label}</label>
+      <div className="relative">
+        <Icon className={cn('absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5', focusedField === id ? 'text-primary' : 'text-muted-foreground')} />
+        <input
+          id={id}
+          name={id}
+          className={cn('w-full pl-12 pr-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300', focusedField === id ? 'border-primary shadow-earth' : 'border-border hover:border-primary/50')}
+          onFocus={() => setFocusedField(id)}
+          onBlur={() => setFocusedField(null)}
+          {...props}
+        />
+      </div>
+    </div>
+  );
+}
+
+function SelectField({ id, label, options, focusedField, setFocusedField, ...props }: any) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-sm font-medium text-foreground mb-2">{label}</label>
+      <select
+        id={id}
+        name={id}
+        className={cn('w-full px-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300', focusedField === id ? 'border-primary shadow-earth' : 'border-border hover:border-primary/50')}
+        onFocus={() => setFocusedField(id)}
+        onBlur={() => setFocusedField(null)}
+        {...props}
+      >
+        <option value="">Select an option</option>
+        {options.map((opt: string) => <option key={opt} value={opt}>{opt}</option>)}
+      </select>
+    </div>
+  );
+}
+
+function TextareaField({ id, label, icon: Icon, focusedField, setFocusedField, ...props }: any) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-sm font-medium text-foreground mb-2">{label}</label>
+      <div className="relative">
+        <Icon className={cn('absolute left-4 top-4 w-5 h-5', focusedField === id ? 'text-primary' : 'text-muted-foreground')} />
+        <textarea
+          id={id}
+          name={id}
+          rows={4}
+          className={cn('w-full pl-12 pr-4 py-3.5 rounded-xl border-2 bg-background transition-all duration-300 resize-none', focusedField === id ? 'border-primary shadow-earth' : 'border-border hover:border-primary/50')}
+          onFocus={() => setFocusedField(id)}
+          onBlur={() => setFocusedField(null)}
+          {...props}
+        />
       </div>
     </div>
   );

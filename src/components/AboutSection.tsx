@@ -1,20 +1,22 @@
 import { useScrollAnimation, useCountUp } from '@/hooks/useScrollAnimation';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Shield, FileText, Users, MapPin } from 'lucide-react';
 
 const highlights = [
-  'Trusted by 10,000+ satisfied families',
-  'Partnerships with 200+ verified builders',
-  'Transparent deals with no hidden charges',
-  'Complete legal assistance and documentation',
+  '10+ years of land mediation experience',
+  'Verified land listings with clear titles',
+  'Complete legal check & documentation assistance',
+  'Direct negotiation between buyers and sellers',
+  'Expertise in village layouts & gated ventures',
+  'Transparent dealings with no hidden charges',
 ];
 
 const stats = [
-  { value: 15, suffix: '+', label: 'Years Experience' },
-  { value: 10000, suffix: '+', label: 'Happy Clients' },
-  { value: 500, suffix: '+', label: 'Properties Sold' },
-  { value: 98, suffix: '%', label: 'Client Satisfaction' },
+  { value: 10, suffix: '+', label: 'Years Experience' },
+  { value: 5000, suffix: '+', label: 'Happy Clients' },
+  { value: 300, suffix: '+', label: 'Lands Sold' },
+  { value: 25, suffix: '+', label: 'Districts Covered' },
 ];
 
 export function AboutSection() {
@@ -45,21 +47,21 @@ function ImageColumn() {
         {/* Main Image */}
         <div className="rounded-2xl overflow-hidden shadow-lg">
           <img
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
-            alt="Luxury home interior showcasing premium real estate"
+            src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80"
+            alt="Land surveyor marking plot boundaries in India"
             className="w-full h-[500px] object-cover"
           />
         </div>
 
         {/* Floating Card */}
-        <div className="absolute -bottom-8 -right-8 bg-background rounded-2xl p-6 shadow-lg max-w-xs">
+        <div className="absolute -bottom-8 -right-8 bg-card rounded-2xl p-6 shadow-lg max-w-xs border border-border">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-              <CheckCircle2 className="w-6 h-6 text-primary" />
+            <div className="w-12 h-12 rounded-full bg-olive/20 flex items-center justify-center">
+              <Shield className="w-6 h-6 text-olive" />
             </div>
             <div>
-              <h4 className="font-bold text-foreground">Trusted Agency</h4>
-              <p className="text-sm text-muted-foreground">Since 2009</p>
+              <h4 className="font-bold text-foreground">Trusted Mediator</h4>
+              <p className="text-sm text-muted-foreground">Since 2014</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -69,9 +71,9 @@ function ImageColumn() {
           </div>
         </div>
 
-        {/* Decorative Element */}
-        <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-2xl -z-10" />
-        <div className="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-primary/20 rounded-2xl -z-10" />
+        {/* Decorative Elements */}
+        <div className="absolute -top-6 -left-6 w-24 h-24 bg-olive/10 rounded-2xl -z-10" />
+        <div className="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-gold/20 rounded-2xl -z-10" />
       </div>
     </div>
   );
@@ -85,39 +87,38 @@ function ContentColumn() {
       ref={ref}
       className={cn('opacity-0', isVisible && 'animate-slide-left')}
     >
-      <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-        About Premium Estate
+      <span className="text-olive font-semibold text-sm uppercase tracking-wider">
+        About Us
       </span>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-        Your Trusted Partner in{' '}
+        Making Land Deals{' '}
         <span className="font-display italic text-primary">
-          Luxury Real Estate
+          Simple, Safe & Transparent
         </span>
       </h2>
 
       <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-        With 15+ years of excellence in the real estate industry, Premium Estate
-        has helped over 10,000 families find their perfect home. Our commitment
-        to transparency, quality, and customer satisfaction sets us apart in the
-        luxury property market.
+        With over a decade of experience in the land mediation industry, we have 
+        helped thousands of families, farmers, and investors find their ideal plots. 
+        Our commitment to transparency and fair dealings sets us apart.
       </p>
 
       <p className="text-muted-foreground leading-relaxed mb-8">
-        From first-time homebuyers to seasoned investors, we provide personalized
-        guidance through every step of your property journey. Our team of expert
-        consultants, legal advisors, and market analysts work together to ensure
-        seamless transactions and lasting relationships.
+        Whether you're a first-time land buyer looking for residential plots or a 
+        farmer seeking agricultural land, we provide personalized guidance through 
+        every step of your land transaction. Our network spans 25+ districts with 
+        verified listings and complete legal support.
       </p>
 
       {/* Highlights */}
-      <div className="space-y-4 mb-10">
+      <div className="space-y-3 mb-10">
         {highlights.map((highlight, index) => (
           <div
             key={index}
             className="flex items-center gap-3"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+            <CheckCircle2 className="w-5 h-5 text-olive flex-shrink-0" />
             <span className="text-foreground font-medium">{highlight}</span>
           </div>
         ))}

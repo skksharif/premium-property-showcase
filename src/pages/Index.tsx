@@ -1,6 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
-import { FeaturesSection } from '@/components/FeaturesSection';
+import { PlotCategoriesSection } from '@/components/PlotCategoriesSection';
 import { PropertiesSection } from '@/components/PropertiesSection';
 import { AboutSection } from '@/components/AboutSection';
 import { WhyChooseUsSection } from '@/components/WhyChooseUsSection';
@@ -13,10 +13,11 @@ const Index = () => {
     <main className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
+      <PlotCategoriesSection />
       <PropertiesSection />
       <AboutSection />
       <WhyChooseUsSection />
+      <TestimonialsSection />
       <ContactSection />
       <Footer />
     </main>

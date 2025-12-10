@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Home, Building2, Users, Phone, Star } from 'lucide-react';
+import { Menu, X, Home, MapPin, Users, Phone, Grid3X3 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '#home', label: 'Home', icon: Home },
-  { href: '#properties', label: 'Properties', icon: Building2 },
+  { href: '#categories', label: 'Plot Types', icon: Grid3X3 },
+  { href: '#properties', label: 'Listings', icon: MapPin },
   { href: '#about', label: 'About', icon: Users },
-  //{ href: '#testimonials', label: 'Testimonials', icon: Star },
   { href: '#contact', label: 'Contact', icon: Phone },
 ];
 
@@ -51,13 +51,16 @@ export function Navbar() {
           }}
           className="flex items-center gap-2 group"
         >
+          <div className="w-10 h-10 rounded-lg bg-gradient-earth flex items-center justify-center">
+            <MapPin className="w-5 h-5 text-primary-foreground" />
+          </div>
           <span
             className={cn(
               'text-xl font-bold transition-colors duration-300',
               isScrolled ? 'text-foreground' : 'text-primary-foreground'
             )}
           >
-            Vegi<span className="text-primary"> Info</span>
+            Vegi<span className="text-gold"> Info</span>
           </span>
         </a>
 
@@ -72,12 +75,12 @@ export function Navbar() {
                 scrollToSection(link.href);
               }}
               className={cn(
-                'text-sm font-medium transition-all duration-300 hover:text-primary relative group',
+                'text-sm font-medium transition-all duration-300 hover:text-gold relative group',
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
               )}
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
@@ -120,7 +123,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'lg:hidden absolute top-full left-0 right-0 bg-white md:bg-background/98 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden',
+          'lg:hidden absolute top-full left-0 right-0 bg-card backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden',
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         )}
       >
@@ -133,7 +136,7 @@ export function Navbar() {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className="flex items-center gap-3 text-foreground hover:text-primary transition-colors py-2"
+              className="flex items-center gap-3 text-foreground hover:text-gold transition-colors py-2"
             >
               <link.icon className="w-5 h-5" />
               {link.label}
