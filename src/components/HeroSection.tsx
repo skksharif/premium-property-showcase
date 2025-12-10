@@ -39,7 +39,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col overflow-hidden">
+    <section id="home" className="relative h-[100vh] lg:min-h-screen flex flex-col lg:flex-row overflow-hidden">
 
       {/* Background Image (Mobile Only) */}
       <div className="absolute inset-0 lg:hidden">
@@ -52,7 +52,7 @@ export function HeroSection() {
       </div>
 
       {/* Split Screen Wrapper */}
-      <div className="flex flex-col lg:flex-row w-full min-h-screen">
+      <div className="flex flex-col lg:flex-row w-full h-screen lg:h-auto lg:min-h-screen">
 
         {/* LEFT SECTION (IMAGE) - Hidden on Mobile, Visible on Desktop */}
         <div className="hidden lg:block relative w-full lg:h-screen lg:w-1/2 overflow-hidden">
@@ -88,12 +88,12 @@ export function HeroSection() {
         </div>
 
         {/* RIGHT SECTION (CONTENT) */}
-        <div className="relative w-full lg:w-1/2 bg-transparent lg:bg-charcoal flex items-center justify-center px-6 py-10 sm:py-16 lg:py-0 z-10 lg:z-auto mt-20 lg:mt-0">
+        <div className="relative w-full lg:w-1/2 bg-transparent lg:bg-charcoal flex flex-col items-center justify-center  px-6 py-10 sm:py-16 lg:py-0 z-10 lg:z-auto flex-1">
 
           {/* Subtle Texture */}
           <div className="absolute inset-0 opacity-5 bg-texture-pattern" />
 
-          <div className="relative z-10 max-w-lg w-full">
+          <div className="relative z-10 max-w-lg w-full mt-[150px]">
 
             {/* Badge */}
             <div
@@ -181,7 +181,7 @@ export function HeroSection() {
           {/* Scroll Indicator */}
           <div
             className={cn(
-              "absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-0",
+              "absolute bottom-10 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-0",
               isLoaded && "animate-fade-up"
             )}
             style={{ animationDelay: "1.8s" }}
