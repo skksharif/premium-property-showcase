@@ -28,12 +28,7 @@ const features = [
     description:
       'Exclusive access to premium residences, penthouses, and luxury estates in prime locations.',
   },
-  {
-    icon: Video,
-    title: 'Virtual Tours',
-    description:
-      'Experience properties from anywhere with our immersive 360° virtual tour technology.',
-  },
+
   {
     icon: DollarSign,
     title: 'Transparent Pricing',

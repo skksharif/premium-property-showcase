@@ -62,7 +62,7 @@ export function HeroSection() {
           >
             <Award className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary-foreground">
-              15+ Years of Real Estate Excellence
+              Trusted Land Mediator Since 2010
             </span>
           </div>
 
@@ -74,10 +74,10 @@ export function HeroSection() {
             )}
             style={{ animationDelay: '0.4s' }}
           >
-            Find Your{' '}
-            <span className="font-display italic text-primary">Dream Home</span>
+            Your Trusted{' '}
+            <span className="font-display italic text-primary">Land Mediator</span>
             <br />
-            with Premium Experts
+            for Selling & Purchasing
           </h1>
 
           {/* Subheading */}
@@ -88,8 +88,7 @@ export function HeroSection() {
             )}
             style={{ animationDelay: '0.6s' }}
           >
-            Trust our legacy of excellence in luxury real estate. From verified listings 
-            to personalized property consultation, we turn your vision into reality.
+            We bridge buyers and sellers with transparent, expert guidance. Whether you're purchasing your ideal property or selling land quickly and fairly, we ensure a smooth transaction every step of the way.
           </p>
 
           {/* CTA Buttons */}
@@ -106,7 +105,7 @@ export function HeroSection() {
               onClick={() => scrollToSection('#contact')}
               className="group"
             >
-              Book a Site Visit
+              Start Your Transaction
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -116,7 +115,7 @@ export function HeroSection() {
               className="group"
             >
               <Play className="w-5 h-5" />
-              Explore Listings
+              Available Lands
             </Button>
           </div>
 
@@ -128,10 +127,10 @@ export function HeroSection() {
             )}
             style={{ animationDelay: '1s' }}
           >
-            <StatItem value="10,000+" label="Happy Families" icon={Users} />
-            <StatItem value="500+" label="Luxury Properties" icon={Award} />
-            <StatItem value="50+" label="Cities Covered" icon={MapPin} />
-            <StatItem value="15+" label="Years Experience" icon={Award} />
+            <StatItem value="5,000+" label="Successful Deals" icon={Users} />
+            <StatItem value="300+" label="Lands Sold" icon={Award} />
+            <StatItem value="25+" label="Districts Covered" icon={MapPin} />
+            <StatItem value="15+" label="Years as Mediator" icon={Award} />
           </div>
         </div>
       </div>
